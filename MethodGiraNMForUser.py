@@ -17,7 +17,6 @@ class MethodGiraNMForUser():
 		self.a2 = 3
 		self.a3 = -4/3
 		self.a4 = 1/4
-		#self.methodRunge = MethodRungeKutta4ForUser()
 		self.methodRunge = MRKMM()
 		self.startVectorX = 0
 		self.startVectorY = 0 
@@ -125,8 +124,4 @@ class MethodGiraNMForUser():
 		return self.PointGX, self.PointGY
 
 
-# k = SystemODY()
-# m = MethodGiraNMForUser()
-# kek1, kek2 = m.startComputing(k.GetFunction1(), k.GetFunction2(), 0, 0)
-# print(kek1)
-# print(kek2)
+

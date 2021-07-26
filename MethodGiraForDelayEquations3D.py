@@ -209,19 +209,7 @@ class MethodGiraForDelayEquations3D():
 
 
 
-#x=0
-#y=0
-#z=0
-#k = MethodGiraForDelayEquations()
-#k.setStep(0.01)
-#try:
-#x,y,z = k.dataFlowAssessment("y + 3.9*z + 0.001*alfa1", "0.9*x*x - y + 0.0001*beta1", "1 - x + 0.1*gamma1", "2 * sin(t)", "cos(t)", "sin(cos(t))", alfa1 = 2, beta1 = 2, gamma1 = 2)
-#x,y,z = k.dataFlowAssessment("y + 3.9*z", "0.9*x*x - y", "1 - x ", "2 * sin(t)", "cos(t)", "sin(cos(t))", alfa1 = 0, beta1 = 0, gamma1 = 0)
-#except Exception:
-#	print('Это что ещё такое?')
-#print(x)
-#print(y)
-#print(z)
+
 
 
 

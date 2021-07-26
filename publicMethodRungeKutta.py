@@ -156,13 +156,3 @@ class MethodRungeKuttaGetResultCurva():
 	def result(self, k1, k2, k3, k4):
 		return self.step / 6 * (k1 + 2*k2 + 2*k3 + k4)
 
-#m = MethodRungeKuttaGetResultCurva()
-#m.setStep(0.001)
-#m.setStartPoint(0.2, 0.2, 0.2)
-#m.startMethodRunge("0.1 * (1 - x) * x + 0.9 * (y - x)", "0.1 * (1 - y) * y + 0.9 * (x - y)", "", 4000, "", "", "")
-#m.startMethodRunge("y + w*z", "v*x*x - y", "1 - x", 4, "", "", "", w =3.9, v = 0.9)
-#m.startMethodRunge("w*(1 - v*alfa1 - (1 - v)*alfa2)*x", "", "", 40000, "3", "", "", w = 7.3, v = 0.2, alfa1 = 1, alfa2 = 0.3)
-#m.startMethodRunge("w*(1 - alfa1)*x + v*(y - x)", "w*(1 - beta1)*y + v*(x - y)", "", 40000, "2", "3", "", w = 6, v = 0.05, alfa1 = 1, beta1 = 1)
-#print(m.arrayPointRungeX)
-#print(m.arrayPointRungeY)
-#print(m.arrayPointRungeZ)

@@ -17,10 +17,13 @@ class MRKMM():
 	def setStartPoint(self, x, y):
 		self.startX = x
 		self.startY = y 
+
 	def setStep(self,step):
 		self.step = step
+
 	def setIter(self, iteration):
 		self.iteration = iteration
+		
 	def get4Point(self, function1, function2, w, v):
 		i = 0
 		while i < 4:

@@ -116,11 +116,3 @@ class MethodGiraNM():
 
 		return self.PointGX, self.PointGY
 
-# k = SystemODY()
-# m = MethodGiraNM()
-# g,j = m.startComputing(k)
-# print(g)
-# print(j)
-# x=2 
-# y=3
-# print(eval(k.GetFunction1()))

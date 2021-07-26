@@ -55,7 +55,7 @@ class MethodRungeKutta4ForUser3D():
 			self.arrayPointRungeX.append(self.startX)
 			self.arrayPointRungeY.append(self.startY)
 			self.arrayPointRungeZ.append(self.startZ)
-			#if abs(self.startX)<100000 and abs(self.startY)<100000 and abs(self.startZ) < 100000 :
+			
 			self.startX += self.result(k1x, k2x, k3x, k4x)
 			self.startY += self.result(k1y, k2y, k3y, k4y)
 			self.startZ += self.result(k1z, k2z, k3z, k4z)
@@ -89,7 +89,7 @@ class MethodRungeKutta4ForUser3D():
 			self.arrayPointGiraX.append(self.startX)
 			self.arrayPointGiraY.append(self.startY)
 			self.arrayPointGiraZ.append(self.startZ)
-			#if abs(self.startX)<100000 and abs(self.startY)<100000 and abs(self.startZ) < 100000 :
+			
 			self.startX += self.result(k1x, k2x, k3x, k4x)
 			self.startY += self.result(k1y, k2y, k3y, k4y)
 			self.startZ += self.result(k1z, k2z, k3z, k4z)
@@ -97,9 +97,3 @@ class MethodRungeKutta4ForUser3D():
 	def result(self, k1, k2, k3, k4):
 		return self.step / 6 * (k1 + 2*k2 + 2*k3 + k4)
 
-# m = MethodRungeKutta4ForUser3D()
-# m.setStep(0.1)
-# m.get4Point("y+3.9*z", "0.9*x*x-y", " 1-x ",  0, 0 , 0, 0)
-# print(m.arrayPointGiraX)
-# print(m.arrayPointGiraY)
-# print(m.arrayPointGiraZ)

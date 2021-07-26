@@ -119,15 +119,3 @@ class MethodGNODY():
 
 		return self.PointGX, self.PointGT
 
-# k = MethodGNODY()
-# k.setStep(0.1)
-# k.startComputing("alfa1 - 0.01*x*x", "100 + 4*cos(25*t+5)", alfa1 = 1, alfa2 = 1, alfa3 = 1)
-# print(k.PointGX)
-#print(k.PointGT)
-
-
-#k = MethodGiraForDelayEquations2D()
-#k.setStep(0.01)
-#k.dataFlowAssessment("0.1 * (1 - x) * x + 0.9 * (y - x) + 0.01*alfa1", "0.1 * (1 - y) * y + 0.9 * (x - y) + 0.01*beta1", "2 * sin(t)", "cos(t)", alfa1 = 2, beta1 = 2)
-# print(k.PointGX)
-# print(k.PointGY)

@@ -23,8 +23,10 @@ class MethodRKODY():
 
 	def setStep(self,step):
 		self.step = step
+
 	def setIter(self, iteration):
 		self.iteration = iteration
+		
 	def setStartPoint(self, x):
 		self.startX = x
 
@@ -137,8 +139,3 @@ class MethodRKODY():
 	def result (self,k1,k2,k3,k4):
 		return self.step / 6 * (k1 + 2*k2 + 2*k3 + k4)
 
-# k = MethodRKODY()
-# k.setStep(0.1)
-# k.startMethodRunge("0.3*x + 0.2*alfa1", "1", alfa1 = 1, alfa2 = 1, alfa3 = 1)
-#print(k.arrayPointRungeT)
-#print(k.arrayPointRungeX)

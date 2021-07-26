@@ -36,6 +36,7 @@ class MethodGiraForDelayEquations2D():
 		self.methodRunge.setStep(step)
 		self.methodRunge2.setStep(step)
 		self.step = step 
+
 	def setIter(self, iteration):
 		self.iteration = iteration
 
@@ -51,7 +52,7 @@ class MethodGiraForDelayEquations2D():
 		else :
 			return self.startComputing(function1, function2, startfunctionX, startfunctionY, **kwargs)
 
-	def getArrayPoints(self, function1, function2, startfunctionX, startfunctionY, **kwargs):
+	def get_array_points(self, function1, function2, startfunctionX, startfunctionY, **kwargs):
 		self.methodRunge2.get4Point(function1, function2, startfunctionX, startfunctionY, **kwargs)
 		self.dictionary = self.methodRunge2.dictionary
 		self.dictionaryTime = self.methodRunge2.dictTime
@@ -167,8 +168,3 @@ class MethodGiraForDelayEquations2D():
 
 
 
-# k = MethodGiraForDelayEquations2D()
-# k.setStep(0.01)
-# k.dataFlowAssessment("0.1 * (1 - x) * x + 0.9 * (y - x) + 0.01*alfa1", "0.1 * (1 - y) * y + 0.9 * (x - y) + 0.01*beta1", "2 * sin(t)", "cos(t)", alfa1 = 2, beta1 = 2)
-# print(k.PointGX)
-# print(k.PointGY)

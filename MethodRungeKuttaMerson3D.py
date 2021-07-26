@@ -15,7 +15,9 @@ class MethodRungeKuttaMerson3D():
 		self.arrayPointGiraX = []
 		self.arrayPointGiraY = []
 		self.arrayPointGiraZ = []
-		self.dictionary = {'alfa1' : 0, 'alfa2' : 0, 'alfa3' : 0, 'beta1' : 0, 'beta2' : 0, 'beta3' : 0, 'gamma1' : 0, 'gamma2' : 0, 'gamma3' : 0}
+		self.dictionary = {'alfa1': 0, 'alfa2': 0, 'alfa3': 0, 
+											 'beta1': 0, 'beta2': 0, 'beta3': 0, 
+											 'gamma1': 0, 'gamma2': 0, 'gamma3': 0}
 		self.dictTime = {}
 		self.cos = cos
 		self.sin = sin
@@ -23,6 +25,7 @@ class MethodRungeKuttaMerson3D():
 
 	def setStep(self,step):
 		self.step = step
+		
 	def setIter(self, iter):
 		self.iteration = iter
 
@@ -104,13 +107,6 @@ class MethodRungeKuttaMerson3D():
 			delta2 = k1y - 9/2*k3y + 4*k4y - 1/2*k5y
 			delta3 = k1z - 9/2*k3z + 4*k4z - 1/2*k5z
 
-			# Автоматический выбор шага
-			# if delta1 > 5 * self.eps or delta2 > 5 * self.eps or delta3 > 5 * self.eps :
-			# 	self.step = self.step / 2
-			# 	i = i - 1 
-			# 	continue
-			# if delta1 < 5/32 * self.eps and delta2 < 5/32 * self.eps and delta3 < 5/32 * self.eps:
-			# 	self.step = 2*self.step
 			self.arrayPointRungeX.append(self.startX)
 			self.arrayPointRungeY.append(self.startY)
 			self.arrayPointRungeZ.append(self.startZ)
@@ -200,13 +196,6 @@ class MethodRungeKuttaMerson3D():
 			delta2 = k1y - 9/2*k3y + 4*k4y - 1/2*k5y
 			delta3 = k1z - 9/2*k3z + 4*k4z - 1/2*k5z
 
-			# Автоматический выбор шага
-			# if delta1 > 5 * self.eps or delta2 > 5 * self.eps or delta3 > 5 * self.eps :
-			# 	self.step = self.step / 2
-			# 	i = i - 1 
-			# 	continue
-			# if delta1 < 5/32 * self.eps and delta2 < 5/32 * self.eps and delta3 < 5/32 * self.eps:
-			# 	self.step = 2*self.step
 			self.arrayPointGiraX.append(self.startX)
 			self.arrayPointGiraY.append(self.startY)
 			self.arrayPointGiraZ.append(self.startZ)
@@ -223,21 +212,3 @@ class MethodRungeKuttaMerson3D():
 	def result (self, k1, k4, k5):
 		return 1/2 * (k1 + 4*k4 + k5)
 
-
-# def function1(t, x, y):
-# 	return 0.1 * (1 - x) * x + 0.9 * (y - x)
-# def function2(t, x, y):
-# 	return 0.1 * (1 - y) * y + 0.9 * (x - y)
-
-
-# dict = {1 : [1,2,3], 2 : [3,4,5]}
-# print(dict[1])
-
-#k = MethodRungeKuttaMerson()
-#k.setStep(0.01)
-#k.startMethodRunge("y + 3.9*z ", "0.9*x*x - y", "1 - x", "2 * sin(t)", "cos(t)", "sin(cos(t))", alfa1 = 0, beta1 = 0, gamma1 = 0)
-#print(k.arrayPointRungeX)
-# print(k.arrayPointRungeY)
-# print(k.arrayPointRungeZ)
-
-print(abs(-5))

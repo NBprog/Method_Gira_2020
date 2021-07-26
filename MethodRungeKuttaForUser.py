@@ -72,8 +72,4 @@ class MethodRungeKutta4ForUser():
 	def result(self, k1, k2, k3, k4):
 		return self.step / 6 * (k1 + 2*k2 + 2*k3 + k4)
 
-# k = SystemODY()
-# m = MethodRungeKutta4ForUser()
-# m.get4Point(k.GetFunction1(), k.GetFunction2(), 0, 0)
-# print(m.arrayPointGiraX)
-# print(m.arrayPointGiraY)
+

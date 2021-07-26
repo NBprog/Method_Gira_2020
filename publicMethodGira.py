@@ -269,16 +269,3 @@ class MethodGiraGetResultCurva():
 			self.time = self.time + self.step 
 			self.dictionary['t'] = self.time
 
-# m = MethodGiraGetResultCurva()
-# m.setStepDD(0.001)
-# #m.setStartPoint()
-# m.setIter(4000)
-# #m.startComputing("2*t - x + t*t", "", "", "", "", "")
-# #m.startComputing("0.1 * (1 - x) * x + 0.9 * (y - x)", "0.1 * (1 - y) * y + 0.9 * (x - y)", "", "", "", "")
-# #m.startComputing("y + w*z", "v*x*x - y", "1 - x", "", "", "", w =3.9, v = 0.9)
-# #m.startComputing("w*(1 - v*alfa1 - (1 - v)*alfa2)*x", "", "", "3", "", "", w = 7.3, v = 0.2, alfa1 = 1, alfa2 = 0.3)
-# m.startComputing("w*(1 - alfa1)*x + v*(y - x)", "w*(1 - beta1)*y + v*(x - y)", "", "2", "3", "", w = 6, v = 0.05, alfa1 = 1, beta1 = 1)
-# #print(m.PointGT)
-# print(m.PointGX)
-# #print(m.PointGZ)
-# #print(m.arrayPointRungeZ)

@@ -15,8 +15,10 @@ class MethodRungeKutta4():
 
 	def setStep(self,step):
 		self.step = step
+
 	def setIter(self, iter):
 		self.iteration = iter
+		
 	def setStartPoint(self, x, y):
 		self.startX = x
 		self.startY = y
@@ -52,15 +54,4 @@ class MethodRungeKutta4():
 	def result (self, k1, k2, k3, k4):
 		return self.step / 6 * (k1 + 2*k2 + 2*k3 + k4)
 
-# не значимые функции(удалить после создания)
-
-# def function1(x, y) : 
-# 	return 0.1 * (1 - x) * x + 0.9 * (y - x)
-# def function2(x, y) :
-# 	return 0.1 * (1 - y) * y + 0.9 * (x - y)
-# s = SystemODY()
-# k = MethodRungeKutta4()
-# k.startMethodRunge(s)
-# print(k.arrayPointRungeX)
-# print(k.arrayPointRungeY)
 

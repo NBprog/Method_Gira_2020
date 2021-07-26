@@ -28,11 +28,13 @@ class MethodGira :
 		self.a4 = 1/4
 		self.counter = 0
 
-	def setStartPoint(self, x, y) :
+	def setStartPoint(self, x, y):
 		self.methodRunge.setStartPoint(x, y)
-	def setStep(self, step) :
+
+	def setStep(self, step):
 		self.methodRunge.setStep(step)
 		self.step = step
+		
 	def setIter(self, iteration):
 		self.iteration = iteration 
 
@@ -99,11 +101,6 @@ def function2(x, y) :
 	return 0.1 * (1 - y) * y + 0.9 * (x - y)
 
 
-# system = SystemODY()
-# k = MethodGira()
-# k.Iteration(system)
-# print(k.arrayPointSIMX)
-# print(k.arrayPointSIMY)
 
 
 

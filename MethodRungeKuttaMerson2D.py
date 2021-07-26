@@ -24,6 +24,7 @@ class MethodRungeKuttaMerson2D():
 
 	def setStep(self,step):
 		self.step = step
+		
 	def setIter(self, iter):
 		self.iteration = iter
 
@@ -96,13 +97,7 @@ class MethodRungeKuttaMerson2D():
 			delta1 = k1x - 9/2*k3x + 4*k4x - 1/2*k5x
 			delta2 = k1y - 9/2*k3y + 4*k4y - 1/2*k5y
 
-			# Автоматический выбор шага
-			# if delta1 > 5 * self.eps or delta2 > 5 * self.eps or delta3 > 5 * self.eps :
-			# 	self.step = self.step / 2
-			# 	i = i - 1 
-			# 	continue
-			# if delta1 < 5/32 * self.eps and delta2 < 5/32 * self.eps and delta3 < 5/32 * self.eps:
-			# 	self.step = 2*self.step
+			
 			self.arrayPointRungeX.append(self.startX)
 			self.arrayPointRungeY.append(self.startY)
 			self.dictTime[round(self.time, 10)] = [self.startX, self.startY]
@@ -181,19 +176,12 @@ class MethodRungeKuttaMerson2D():
 			delta1 = k1x - 9/2*k3x + 4*k4x - 1/2*k5x
 			delta2 = k1y - 9/2*k3y + 4*k4y - 1/2*k5y
 
-			# Автоматический выбор шага
-			# if delta1 > 5 * self.eps or delta2 > 5 * self.eps or delta3 > 5 * self.eps :
-			# 	self.step = self.step / 2
-			# 	i = i - 1 
-			# 	continue
-			# if delta1 < 5/32 * self.eps and delta2 < 5/32 * self.eps and delta3 < 5/32 * self.eps:
-			# 	self.step = 2*self.step
+			
 			self.arrayPointGiraX.append(self.startX)
 			self.arrayPointGiraY.append(self.startY)
 
 			self.dictTime[round(self.time, 10)] = [self.startX, self.startY]
 	
-			#if abs(self.startX) < 100000 and abs(self.startY) < 100000 :
 			self.startX += self.result(k1x, k4x, k5x)
 			self.startY += self.result(k1y, k4y, k5y)
 			self.time += self.step
@@ -202,18 +190,4 @@ class MethodRungeKuttaMerson2D():
 		return 1/2 * (k1 + 4*k4 + k5)
 
 
-# def function1(t, x, y):
-# 	return 0.1 * (1 - x) * x + 0.9 * (y - x)
-# def function2(t, x, y):
-# 	return 0.1 * (1 - y) * y + 0.9 * (x - y)
 
-
-# dict = {1 : [1,2,3], 2 : [3,4,5]}
-# print(dict[1])
-
-# k = MethodRungeKuttaMerson2D()
-# k.setStep(0.01)
-# k.startMethodRunge("y + 0.01*alfa1", "4*(1 - x*x )*y - x + 0.01*beta1", "sin(t)", "cos(t)", alfa1 = 2, beta1 = 2)
-# print(k.arrayPointRungeX)
-# print(k.arrayPointRungeY)
-# print(k.arrayPointRungeZ)

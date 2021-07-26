@@ -40,9 +40,10 @@ class MethodGiraNMForUser3D():
 
 	def setStartPoint(self, x, y, z):
 		self.methodRunge.setStartPoint(x, y, z)
+
 	def setStep(self, step):
-		#self.methodRunge.setStep(step)
 		self.step = step 
+		
 	def setIter(self, iteration):
 		self.iteration = iteration
 
@@ -172,10 +173,3 @@ class MethodGiraNMForUser3D():
 			self.PointGZ.append(resZ)
 		return self.PointGX, self.PointGY, self.PointGZ
 
-# k = SystemODY()
-#m = MethodGiraNMForUser3D()
-# #kek1, kek2, kek3 = m.startComputing("77.27*(y + x*(1 - 8.375 * 10**(-6)*x - y))", " 1/77.27 * (z - (1+x)*y)", " 0.161*(x -z)",  0, 0 , 0, 0)
-#kek1, kek2, kek3 = m.startComputing("y+3.9*z", "0.9*x*x-y", " 1-x ",  0, 0 , 0, 0)
-#print(kek1)
-# print(kek2)
-# print(kek3)

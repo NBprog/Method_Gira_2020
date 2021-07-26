@@ -32,13 +32,7 @@ from MethodGiraForDelayEquations2D import *
 from MethodGiraForDelayEquations3D import *
 from TestingMethod import *
 
-class MplCanvas(FigureCanvasQTAgg):
-
-    def __init__(self, parent=None, width=5, height=4, dpi=100):
-        fig = Figure(figsize=(width, height), dpi=dpi)
-        self.axes = fig.add_subplot(111)
-        super(MplCanvas, self).__init__(fig)
-
+""" Модуль описывает работу с графическим интерфейсом"""
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 	def __init__(self, parent=None, *args, **kwargs):
@@ -47,6 +41,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 def is_digit(str):
+    """ Проверка числа """
     try:
         float(str)
         return True
@@ -54,11 +49,13 @@ def is_digit(str):
         return False
 
 def sixth_button(main):
+    """ Обработка трёхмерной модели уравнений с запаздыванием"""
     try:
         count_row = 1000
         MRK = MethodRKODY()
         MGN = MethodGNODY()
 
+        # Коэффициенты запаздывания 
         alfa1 = 1
         alfa2 = 1
         alfa3 = 1
@@ -118,8 +115,8 @@ def sixth_button(main):
                              alfa3 = alfa3, w = w)
         
         x, t = MGN.startComputing(function1, startfunctionX, 
-                                  alfa1 = alfa1, alfa2 = alfa2, alfa3 = alfa3, 
-                                  w = w)
+                                  alfa1 = alfa1, alfa2 = alfa2, 
+                                  alfa3 = alfa3, w = w)
 
         fig = Figure()
         axes = fig.add_subplot(111)
@@ -129,7 +126,7 @@ def sixth_button(main):
         axes.yaxis.set_label_position("right")
         axes.set_ylabel('     x', rotation = 0)
         axes.legend()
-        main.canavas6 = MyMplCanavas(fig)
+        main.canavas6 = MplCanvas(fig)
         for i in reversed(range(main.componovka6.count())): 
             main.componovka6.itemAt(i).widget().deleteLater()
         main.componovka6.addWidget(main.canavas6)
@@ -156,6 +153,7 @@ def sixth_button(main):
         QMessageBox.about(main, "Warning", "Please check your entries. Something went wrong...")
 
 def fifth_button(main):
+    """ Обработка двумерной системы уравнений с запаздыванием"""
     try:
         count_row = 1000
         MRK = MethodRungeKuttaMerson3D()
@@ -277,7 +275,7 @@ def fifth_button(main):
         ax.set_zlabel('z')
         ax.legend()
         plt.show()
-        main.canavas5 = MyMplCanavas(fig)
+        main.canavas5 = MplCanvas(fig)
         for i in reversed(range(main.componovka5.count())): 
             main.componovka5.itemAt(i).widget().deleteLater()
         main.componovka5.addWidget(main.canavas5)
@@ -306,6 +304,7 @@ def fifth_button(main):
         QMessageBox.about(main, "Warning", "Please check your entries. Something went wrong...")    
 
 def fourth_button(main):
+    """ Обработка уравнения с запаздыванием"""
     try:
         count_row = 1000
         MRK = MethodRungeKuttaMerson2D()
@@ -424,11 +423,11 @@ def fourth_button(main):
         axes.yaxis.set_label_position("right")
         axes.set_ylabel('     y', rotation = 0)
         axes.legend()
-        main.canavas4 = MyMplCanavas(fig)
+        main.canvas4 = MplCanvas(fig)
         for i in reversed(range(main.componovka4.count())): 
             main.componovka4.itemAt(i).widget().deleteLater()
-        main.componovka4.addWidget(main.canavas4)
-        main.toolbar4 = NavigationToolbar(main.canavas4, main)
+        main.componovka4.addWidget(main.canvas4)
+        main.toolbar4 = NavigationToolbar(main.canvas4, main)
         main.componovka4.addWidget(main.toolbar4)
 
         main.tableWidget_4.setColumnCount(6)
@@ -450,6 +449,7 @@ def fourth_button(main):
         QMessageBox.about(main, "Warning", "Please check your entries. Something went wrong...")
 
 def third_button(main):
+    """ Обработка трёзмерной математической модели """
     try:
         count_row = 1000
         MRK = MethodRungeKutta4ForUser3D()
@@ -520,14 +520,12 @@ def third_button(main):
         ax = plt.axes( projection='3d' )
         ax.plot3D(MRK.arrayPointRungeX, MRK.arrayPointRungeY, MRK.arrayPointRungeZ, label='MethodRungeKutta', color = 'b')
         ax.plot3D(x, y, z, label = 'MethodGiraNewton', color = 'g')
-        #ax.plot3D(MRK.arrayPointRungeX, MRK.arrayPointRungeY, MRK.arrayPointRungeZ)
-        #ax.plot3D(x, y, z)
         ax.set_xlabel('x')
         ax.set_ylabel('y')
         ax.set_zlabel('z')
         ax.legend()
         plt.show()
-        main.canavas3 = MyMplCanavas(fig)
+        main.canavas3 = MplCanvas(fig)
         for i in reversed(range(main.componovka3.count())): 
             main.componovka3.itemAt(i).widget().deleteLater()
         main.componovka3.addWidget(main.canavas3)
@@ -553,6 +551,7 @@ def third_button(main):
         QMessageBox.about(main, "Warning", "Please check your entries. Something went wrong...")
 
 def second_button(main):
+    """ Обработка двумерной модели"""
     try:
         count_row = 1000
         MRK = MethodRungeKutta4ForUser()
@@ -612,7 +611,7 @@ def second_button(main):
         axes.yaxis.set_label_position("right")
         axes.set_ylabel('     y', rotation = 0)
         axes.legend()
-        main.canavas2 = MyMplCanavas(fig)
+        main.canavas2 = MplCanvas(fig)
         for i in reversed(range(main.componovka2.count())): 
             main.componovka2.itemAt(i).widget().deleteLater()
         main.componovka2.addWidget(main.canavas2)
@@ -636,6 +635,7 @@ def second_button(main):
         QMessageBox.about(main, "Warning", "Please check your entries. Something went wrong...")
 
 def first_button(main):
+    """ Отображение тестого блока"""
     try:
         #Проверяем номер системы
         if (main.spinBox.text() == "1"):
@@ -695,7 +695,7 @@ def first_button(main):
         axes.yaxis.set_label_position("right")
         axes.set_ylabel('     y', rotation=0)
         axes.legend()
-        main.canavas = MyMplCanavas(fig)
+        main.canavas = MplCanvas(fig)
         for i in reversed(range(main.componovka.count())): 
             main.componovka.itemAt(i).widget().deleteLater()
         main.componovka.addWidget(main.canavas)
@@ -736,7 +736,7 @@ def setNumberSystem(value, main):
     main.StrSys2.setText(system.GetFunction2())
 
 
-class MyMplCanavas(FigureCanvasQTAgg):
+class MplCanvas(FigureCanvasQTAgg):
     def __init__(self, fig, parent = None):
         self.fig = fig
         FigureCanvasQTAgg.__init__(self, self.fig)
@@ -764,4 +764,5 @@ def main():
     main.show()
     sys.exit(app.exec_())
 
-main()		
+if __name__ == "__main__":
+    main()		
